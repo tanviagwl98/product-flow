@@ -3,23 +3,11 @@ const express = require('express')
 const connectDB = require('./config/database')
 const app = express()
 const Product = require('./models/Product')
+const productRoute = require('./routes/product')
 
 connectDB()
 
-app.post("/", async (req,res) => {
-    const  p = new Product({
-        name: "Product 1",
-        price: 100,
-        inventory: 10
-    })
-    await p.save()
-    res.send("Hello World")
-})
-
-app.get("/", async (req,res) => {
-    const products = await Product.find()
-    res.send(products)
-})
+app.use('/',productRoute)
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000')
