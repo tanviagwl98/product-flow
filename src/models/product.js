@@ -5,15 +5,18 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  price: {
+  priceCents: {
     type: Number,
-    required: true
+    required: true,
+    min:0
   },
   inventory:{
     type: Number,
     required: true,
-    default: 0
+    default: 0,
+    min:0
   }
-})
+},
+{timestamps:true})
 
 module.exports = mongoose.model('Product', productSchema)
