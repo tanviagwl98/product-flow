@@ -17,6 +17,6 @@ module.exports = {
             res.json(product)
         } catch(e){
             next(e)
-        }
+}
     }
 }

@@ -6,7 +6,7 @@ const productSchema = new mongoose.Schema({
     required: true
   },
   priceCents: {
-    type: Number,
+    type: Number,           
     required: true,
     min:0
   },
