@@ -12,7 +12,7 @@ module.exports = {
 
     get: async(req, res, next) => {
         try{
-            res.status(201).json(await cartService.addItem(req.params.id))
+            res.status(201).json(await cartService.getCart(req.params.id))
         } catch(err){
             next(err)
         }
